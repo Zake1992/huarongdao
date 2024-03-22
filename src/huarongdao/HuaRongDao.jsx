@@ -13,9 +13,6 @@ function HuaRongDao() {
   const boxRef8 = useRef(null);
   const boxRef9 = useRef(null);
 
-  const [targetRow, setTargetRow] = useState(3);
-  const [targetColumn, setTargetColumn] = useState(3);
-
   const targets = [
     { targetElement: 8, targetRow: 3, targetColumn: 3 },
     { targetElement: 7, targetRow: 3, targetColumn: 2 },
@@ -30,9 +27,6 @@ function HuaRongDao() {
   let tl = gsap.timeline();
 
   const moveBox8 = () => {
-    const targetElement = 8; // 传入的数字
-    moveBox(targetElement, targetRow, targetColumn);
-
     //迭代targets数组
     targets.forEach((target) => {
       moveBox(target.targetElement, target.targetRow, target.targetColumn);
@@ -130,7 +124,7 @@ function HuaRongDao() {
         <div
           className="box"
           ref={boxRef8}
-          style={{ gridArea: '3 / 2 / 4 / 3' }}
+          style={{ gridArea: '3 / 2 / 4 / 3', display: 'none' }}
         >
           Box 8
         </div>
